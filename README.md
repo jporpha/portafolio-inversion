@@ -59,7 +59,8 @@ portafolio-inversion/
 │ │ └── resources/
 │ │ ├── application.properties
 │ │ └── static/
-│ │ └── index.html 
+│ │ │ ├── evolution.html 
+│ │ │ └── rebalance.html 
 └── README.md
 
 ```
@@ -103,15 +104,25 @@ The project uses an Excel file (`datos.xlsx`) with:
 ---
 
 ## Quick Demo for Bonus 1
-A lightweight HTML view was added to visualize the portfolio rebalancing quickly without installing frameworks like React.
+A lightweight HTML view was added to visualize the portfolio evolution between dates.
 
 Open this URL after run the backend and loading the Excel file:
-http://localhost:8080/index.html
+http://localhost:8080/evolution.html
 
 There you will be able to:
 - Enter the ID of a portfolio.
 - View table with proposed rebalancing (current value, target, difference, share, etc).
-- 
+
+
+Another HTML view was added to visualize the portfolio rebalancing quickly without installing frameworks like React.
+
+Open this URL after run the backend and loading the Excel file:
+http://localhost:8080/rebalance.html
+
+There you will be able to:
+- Enter the ID of a portfolio.
+- View table with proposed rebalancing (current value, target, difference, share, etc).
+
 ---
 
 ## Key Concepts

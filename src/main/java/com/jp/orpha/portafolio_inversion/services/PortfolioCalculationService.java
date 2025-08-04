@@ -24,6 +24,5 @@ public interface PortfolioCalculationService {
 
     PortfolioEvolutionDto getPortfolioEvolution(Long portfolioId, LocalDate fechaInicio, LocalDate fechaFin);
 
-
 }
 
