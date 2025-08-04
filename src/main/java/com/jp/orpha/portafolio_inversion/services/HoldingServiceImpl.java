@@ -60,4 +60,17 @@ public class HoldingServiceImpl implements HoldingService {
         holdingRepository.deleteById(id);
         return true;
     }
+
+    @Override
+    public Boolean deleteByPortfolioId(Long portfolioId) {
+        List<HoldingEntity> holdings = holdingRepository.findByPortfolioId(portfolioId);
+
+        if (!holdings.isEmpty()) {
+            holdingRepository.deleteByPortfolioId(portfolioId);
+            return true;
+        }
+        return false;
+    }
+
+
 }

@@ -10,4 +10,5 @@ public interface HoldingService {
     HoldingDto createHolding(HoldingDto holdingDto);
     HoldingDto updateHolding(Long id, HoldingDto holdingDto);
     Boolean deleteHoldingById(Long id);
+    Boolean deleteByPortfolioId(Long id);
 }

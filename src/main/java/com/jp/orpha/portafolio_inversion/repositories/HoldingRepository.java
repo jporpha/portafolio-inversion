@@ -8,5 +8,6 @@ import java.util.List;
 public interface HoldingRepository extends JpaRepository<HoldingEntity, Long> {
 
     List<HoldingEntity> findByPortfolioId(Long portfolioId);
+    void deleteByPortfolioId(Long portfolioId);
 
 }

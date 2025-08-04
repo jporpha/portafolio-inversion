@@ -9,4 +9,9 @@ import java.util.List;
 public interface WeightRepository extends JpaRepository<WeightEntity, Long> {
     List<WeightEntity> findByDate(LocalDate date);
     List<WeightEntity> findByPortfolioId(Long portfolioId);
+    WeightEntity findTopByPortfolioIdAndAssetIdOrderByDateDesc(Long portfolioId, Long assetId);
+
+    List<WeightEntity> findByPortfolioIdAndDate(Long portfolioId, LocalDate date);
+
+
 }
