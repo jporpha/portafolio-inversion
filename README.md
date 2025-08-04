@@ -22,8 +22,8 @@ We must:
    - Daily **portfolio value**
    - Daily **asset weights**
 4. Simulate **rebalancing**
-5. (Bonus) Process **buy/sell trades**
-6. (Bonus) Expose an API for **visualization** (optional for now).
+5. (Bonus 1) Expose an API for **visualization**.
+6. (Bonus 2) Process **buy/sell trades**.
 
 ---
 
@@ -103,25 +103,27 @@ The project uses an Excel file (`datos.xlsx`) with:
 
 ---
 
-## Quick Demo for Bonus 1
-A lightweight HTML view was added to visualize the portfolio evolution between dates.
+## Portfolio Evolution View
+This view displays the evolution of total portfolio value (Vₜ) and the weights of each asset over time (wᵢₜ).
 
-Open this URL after run the backend and loading the Excel file:
+Open this URL after running the backend and loading the Excel file:
 http://localhost:8080/evolution.html
 
-There you will be able to:
-- Enter the ID of a portfolio.
-- View table with proposed rebalancing (current value, target, difference, share, etc).
+**Features:**
+Enter a Portfolio ID.
+Select start and end dates.
+View a stacked area chart for asset weights.
+View a line chart for total portfolio value.
 
+##  Portfolio Rebalancing View
+This view allows you to see a summary table with the current value of each asset, target weights, differences, and suggested actions (buy/sell).
 
-Another HTML view was added to visualize the portfolio rebalancing quickly without installing frameworks like React.
-
-Open this URL after run the backend and loading the Excel file:
+Open this URL after running the backend and loading the Excel file:
 http://localhost:8080/rebalance.html
 
-There you will be able to:
-- Enter the ID of a portfolio.
-- View table with proposed rebalancing (current value, target, difference, share, etc).
+**Features:**
+Enter a Portfolio ID.
+Instantly view rebalancing details in a clean, responsive table.
 
 ---
 
