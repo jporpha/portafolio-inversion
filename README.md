@@ -42,17 +42,26 @@ We must:
 ## Project Structure
 
 ```
-src/main/java/com/jp/orpha/portafolio_inversion
-├── controllers
-│ ├── etl
-├── dtos
-├── entities
-├── enums
-├── exceptions
-├── mappers
-├── repositories
-├── services
-└── PortafolioInversionApplication.java
+portafolio-inversion/
+├── src/
+│ ├── main/
+│ │ ├── java/ 
+│ │ │ └── com.jp.orpha.portafolio_inversion
+│ │ │ ├── controller/ 
+│ │ │ │ ├── etl
+│ │ │ ├── dto/ 
+│ │ │ ├── entities/ 
+│ │ │ ├── enums/ 
+│ │ │ ├── exceptions/ 
+│ │ │ ├── mapper/ 
+│ │ │ ├── repository/ 
+│ │ │ └── service/ 
+│ │ └── resources/
+│ │ ├── application.properties
+│ │ └── static/
+│ │ └── index.html 
+└── README.md
+
 ```
 
 ---
@@ -93,6 +102,18 @@ The project uses an Excel file (`datos.xlsx`) with:
 
 ---
 
+## Quick Demo for Bonus 1
+A lightweight HTML view was added to visualize the portfolio rebalancing quickly without installing frameworks like React.
+
+Open this URL after run the backend and loading the Excel file:
+http://localhost:8080/index.html
+
+There you will be able to:
+- Enter the ID of a portfolio.
+- View table with proposed rebalancing (current value, target, difference, share, etc).
+- 
+---
+
 ## Key Concepts
 
 - **Portfolio Value** `V_t`:\
@@ -125,18 +146,11 @@ The project uses an Excel file (`datos.xlsx`) with:
 
 - Swagger UI provides a complete way to test every feature.
 
----
-
-## Future Work
-
-- Bonus 1: Build a frontend with charts using React (stacked area for weights, line for value).
-- Add unit and integration tests (if time allows).
-- Support PostgreSQL or MySQL for persistence.
 
 ---
 
 ## Author
 
-Mad by **JP Orphanopoulos**\
+Made by **JP Orphanopoulos**\
 (Software engineer, music producer & mystery novelist in progress)
 

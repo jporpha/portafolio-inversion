@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rebalance Portfolio</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<h1>Rebalance Portfolio</h1>
+
+<label for="portfolioId">Portfolio ID:</label>
+<input type="number" id="portfolioId" value="1">
+<button onclick="loadData()">Consultar</button>
+
+<table id="rebalanceTable">
+    <thead>
+    <tr>
+        <th>Asset</th>
+        <th>Current Value</th>
+        <th>Target Weight</th>
+        <th>Target Value</th>
+        <th>Difference</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    async function loadData() {
+        const id = document.getElementById("portfolioId").value;
+        const response = await fetch(`/api/v1/portfolio/calculations/${id}/rebalance`);
+        const data = await response.json();
+
+        const tbody = document.querySelector("#rebalanceTable tbody");
+        tbody.innerHTML = "";
+
+        data.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+          <td>${row.assetName}</td>
+          <td>${row.currentValue?.toFixed(2) ?? 'N/A'}</td>
+          <td>${(row.targetWeight * 100)?.toFixed(2) ?? 'N/A'}%</td>
+          <td>${row.targetValue?.toFixed(2) ?? 'N/A'}</td>
+          <td>${row.difference?.toFixed(2) ?? 'N/A'}</td>
+          <td>${row.quantity?.toFixed(4) ?? 'N/A'}</td>
+          <td>${row.action}</td>
+        `;
+            tbody.appendChild(tr);
+        });
+    }
+</script>
+
+</body>
+</html>
